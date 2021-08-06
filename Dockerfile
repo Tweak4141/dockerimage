@@ -7,9 +7,7 @@ FROM zenika/alpine-chrome:with-node
 
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 
-RUN yarn && \
-	yarn build && \
-	apk add --no-cache tini \
+RUN apk add --no-cache tini \
 	&& useradd -m -d /home/container container
 
 USER container
